@@ -17,6 +17,11 @@ install:
 build_script:
   - pnpm run build:win
 
+artifacts:
+  - path: dist
+    name: xshare-win-x64-dist
+    condition: always
+
 branches:
   only:
     - main
