@@ -1,5 +1,7 @@
 platform:
   - x64
+configuration:
+  - Release
 
 cache:
   - node_modules
@@ -7,11 +9,13 @@ cache:
   - '%USERPROFILE%\.electron'
 
 install:
-  - ps: Install-Product node 8 x64
-  - npm install
+  - ps: Install-Product node 23.10.0 x64
+  - ps: npm config set cache %APPDATA%\npm-cache --global
+  - ps: npm install --global pnpm
+  - pnpm install
 
 build_script:
-  - npm run dist
+  - pnpm run build:win
 
 branches:
   only:
