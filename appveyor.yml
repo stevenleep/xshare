@@ -20,7 +20,6 @@ build_script:
 artifacts:
   - path: dist
     name: xshare-win-x64-dist
-    condition: always
 
 branches:
   only:
